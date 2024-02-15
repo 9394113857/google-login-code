@@ -1,30 +1,48 @@
-# GitHub Download
+# Flask Google Login and Data Display
 
-GitHub Download is a tool for downloading commit comments and select issues metadata from GitHub repositories, saving the raw JSON and writing summary .csv files.
+This project demonstrates how to implement Google OAuth login with Flask and display user data. It also includes functionality for logging out.
 
-## Purpose
+## Libraries Used
 
-- **Retrieve Metadata**: Downloads commit comments and select issues metadata from GitHub repositories.
-- **Data Storage**: Saves the retrieved metadata in raw JSON format.
-- **Summary Files**: Generates summary .csv files to provide an overview of the downloaded data.
+- Flask: A micro web framework for Python.
+- Authlib: A Python OAuth 2.0 and OAuth 1.0 provider library.
+- Requests: A Python HTTP library for making HTTP requests.
 
 ## Installation
 
-1. **Download**: Obtain the `.jar` file from the [latest release](https://github.com/PovertyAction/github-download/releases/latest).
-2. **Dependencies**: The `.jar` file includes all dependencies.
-3. **Java Runtime Environment**: Ensure you have Java Runtime Environment (JRE) version 7 or above installed on your system.
+1. **Clone Repository**: Clone this repository to your local machine:
+
+    ```bash
+    git clone https://github.com/your-username/your-repository.git
+    ```
+
+2. **Navigate to Project Directory**: Go to the project directory:
+
+    ```bash
+    cd your-repository
+    ```
+
+3. **Install Dependencies**: Install the required dependencies using `pip`:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## Usage
 
-GitHub Download can be utilized from the command line with the following flags:
+1. **Run the Flask Application**: Start the Flask application:
 
-- `-repo`: Specifies the full repository name, e.g., `PovertyAction/github-download`.
-- `-to`: Specifies the directory to save the metadata. If it doesn't exist, it will be created.
-- `-token`: Specifies the name of a text file containing a GitHub OAuth token.
+    ```bash
+    python server.py
+    ```
 
-To download all supported metadata, include the `-issues` and `-cc` flags.
+2. **Access the Application**: Open your web browser and go to [http://localhost:5000](http://localhost:5000).
 
-**Note**: You may encounter a warning message about SLF4J, which can be safely ignored.
+3. **Login with Google**: Click on the "Login with Google" link to initiate the OAuth login process.
+
+4. **View User Data**: After successful login, you will be redirected to the home page where user data will be displayed.
+
+5. **Logout**: To log out, click on the "Logout" link.
 
 ## License
 
