@@ -11,22 +11,31 @@
     <p><a href="{{url_for('logout')}}">Logout</a></p>
     <table border="1">
         <tr>
+            <th>Sno</th>
             <th>Field</th>
             <th>Value</th>
         </tr>
+        {% set sno = 1 %}
         <tr>
+            <td>{{ sno }}</td>
             <td>Name</td>
             <td>{{ session['userinfo']['name'] }}</td>
         </tr>
+        {% set sno = sno + 1 %}
         <tr>
+            <td>{{ sno }}</td>
             <td>Email</td>
             <td>{{ session['userinfo']['email'] }}</td>
         </tr>
+        {% set sno = sno + 1 %}
         <tr>
+            <td>{{ sno }}</td>
             <td>Gender</td>
             <td>{{ session['personData']['genders'][0]['formattedValue'] }}</td>
         </tr>
+        {% set sno = sno + 1 %}
         <tr>
+            <td>{{ sno }}</td>
             <td>Birthday</td>
             <td>{{ session['personData']['birthdays'][0]['date']['day'] }}/{{ session['personData']['birthdays'][0]['date']['month'] }}/{{ session['personData']['birthdays'][0]['date']['year'] }}</td>
         </tr>
