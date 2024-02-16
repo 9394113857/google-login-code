@@ -1,0 +1,25 @@
+# First Part 1: commands
+# Change directory to the directory containing your virtual environment scripts
+cd D:\environments\google-login-env\Scripts
+
+# Activate the virtual environment
+.\Activate.ps1
+
+# Now, change directory to the directory containing your Flask application
+cd D:\codes\google-login-code
+
+# Run the Flask application using Python
+py server.py
+
+
+===================
+
+# Second Part 2: commands
+# Change directory to the directory containing your virtual environment scripts
+cd D:\environments\google-login-env\Scripts
+
+# Deactivate the virtual environment
+deactivate
+
+# Now, change directory to the directory containing your Flask application
+cd D:\codes\google-login-code
