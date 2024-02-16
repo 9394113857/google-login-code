@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'> <!-- Define character encoding -->
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'> <!-- Define compatibility settings for Internet Explorer -->
+    <title>My Flask App</title> <!-- Set the title of the page -->
+    <meta name='viewport' content='width=device-width, initial-scale=1'> <!-- Define viewport settings for responsive design -->
+</head>
+<body>
+    {% if session %} <!-- Check if there is an active session -->
+    <p><a href="{{url_for('logout')}}">Logout</a></p> <!-- If session exists, display logout link -->
+    <table border="1"> <!-- Start a table -->
+        <tr> <!-- Table row for column headers -->
+            <th>Sno</th> <!-- Column header for serial number -->
+            <th>Field</th> <!-- Column header for field names -->
+            <th>Value</th> <!-- Column header for field values -->
+        </tr>
+        {% set sno = 1 %} <!-- Initialize serial number -->
+        <tr> <!-- Table row for user's name -->
+            <td>{{ sno }}</td> <!-- Display serial number -->
+            <td>Name</td> <!-- Display field name -->
+            <td>{{ session['userinfo']['name'] }}</td> <!-- Display user's name -->
+        </tr>
+        {% set sno = sno + 1 %} <!-- Increment serial number -->
+        <tr> <!-- Table row for user's email -->
+            <td>{{ sno }}</td> <!-- Display serial number -->
+            <td>Email</td> <!-- Display field name -->
+            <td>{{ session['userinfo']['email'] }}</td> <!-- Display user's email -->
+        </tr>
+        {% set sno = sno + 1 %} <!-- Increment serial number -->
+        <tr> <!-- Table row for user's gender -->
+            <td>{{ sno }}</td> <!-- Display serial number -->
+            <td>Gender</td> <!-- Display field name -->
+            <td>{{ session['personData']['genders'][0]['formattedValue'] }}</td> <!-- Display user's gender -->
+        </tr>
+        {% set sno = sno + 1 %} <!-- Increment serial number -->
+        <tr> <!-- Table row for user's birthday -->
+            <td>{{ sno }}</td> <!-- Display serial number -->
+            <td>Birthday</td> <!-- Display field name -->
+            <td>{{ session['personData']['birthdays'][0]['date']['day'] }}/{{ session['personData']['birthdays'][0]['date']['month'] }}/{{ session['personData']['birthdays'][0]['date']['year'] }}</td> <!-- Display user's birthday -->
+        </tr>
+    </table>
+    {% else %}
+    <p><a href="{{url_for('googleLogin')}}">Login with Google</a></p> <!-- If no session, display login link -->
+    {% endif %}
+</body>
+</html>
